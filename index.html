@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Jass | Android Developer</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0b0f1a;
+  --card:rgba(255,255,255,0.06);
+  --text:#ffffff;
+  --muted:#a1a1aa;
+  --accent:#7c3aed;
+  --accent2:#22d3ee;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:Inter;}
+
+body{
+  background: radial-gradient(circle at top, #111827, #0b0f1a);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* NAV */
+nav{
+  position:sticky;top:0;
+  display:flex;justify-content:space-between;
+  padding:18px 40px;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter: blur(10px);
+  border-bottom:1px solid rgba(255,255,255,0.1);
+  z-index:999;
+}
+
+nav h2{font-size:18px}
+nav a{
+  color:white;
+  margin-left:20px;
+  text-decoration:none;
+  opacity:0.8;
+}
+nav a:hover{opacity:1}
+
+/* HERO */
+.hero{
+  text-align:center;
+  padding:120px 20px;
+  position:relative;
+}
+
+.hero h1{
+  font-size:48px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  -webkit-background-clip:text;
+  color:transparent;
+}
+
+.hero p{margin-top:15px;color:var(--muted);max-width:700px;margin-inline:auto}
+
+.btn{
+  display:inline-block;
+  margin:20px 10px;
+  padding:12px 22px;
+  border-radius:12px;
+  background:linear-gradient(90deg,var(--accent),var(--accent2));
+  color:white;
+  text-decoration:none;
+  font-weight:600;
+  transition:0.3s;
+}
+.btn:hover{transform:scale(1.05)}
+
+/* FLOATING */
+.circle{
+  position:absolute;
+  width:200px;height:200px;
+  background:var(--accent);
+  filter:blur(120px);
+  opacity:0.4;
+  animation: float 6s infinite;
+}
+.circle2{background:var(--accent2);right:0}
+
+@keyframes float{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(30px)}
+}
+
+/* SECTION */
+section{padding:80px 10%}
+
+.title{font-size:28px;margin-bottom:30px}
+
+/* CARDS */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:20px;
+}
+
+.card{
+  background:var(--card);
+  padding:20px;
+  border-radius:16px;
+  border:1px solid rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  transition:0.3s;
+}
+.card:hover{transform:translateY(-5px)}
+
+.tag{
+  display:inline-block;
+  margin:4px;
+  padding:6px 10px;
+  background:rgba(255,255,255,0.08);
+  border-radius:10px;
+  font-size:12px;
+}
+
+/* PRICING */
+.price{
+  font-size:22px;
+  color:var(--accent2);
+  font-weight:700;
+}
+
+/* CONTACT */
+input,textarea{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  border-radius:10px;
+  border:none;
+  background:rgba(255,255,255,0.08);
+  color:white;
+}
+
+footer{
+  text-align:center;
+  padding:40px;
+  color:var(--muted);
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+  <h2>Jass</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="circle"></div>
+  <div class="circle circle2"></div>
+
+  <h1>Senior Android Developer</h1>
+  <p>Building scalable, real-time Android applications with modern architecture and production-grade performance.</p>
+
+  <a class="btn" href="#contact">Hire Me</a>
+  <a class="btn" href="#projects">View Projects</a>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <h2 class="title">About Me</h2>
+  <div class="card">
+    Android Developer with 8+ years of experience building scalable production-grade mobile applications using Kotlin and Java.
+    <br><br>
+    Worked on Live Streaming, Health, Fitness, Chat, and Enterprise Android apps.
+  </div>
+
+  <br>
+
+  <div>
+    <span class="tag">MVVM</span>
+    <span class="tag">Jetpack Compose</span>
+    <span class="tag">Firebase</span>
+    <span class="tag">API Integration</span>
+    <span class="tag">WebRTC</span>
+    <span class="tag">ZegoCloud</span>
+    <span class="tag">agora.io</span>
+    <span class="tag">Socket.IO</span>
+    <span class="tag">Stripe</span>
+    <span class="tag">Razorpay</span>
+    <span class="tag">Others</span>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="title">Projects</h2>
+
+  <div class="grid">
+
+     <div class="card">
+      <h3>MastiShorts – Live Streaming App</h3>
+      <p>live streaming modules like feed, real-time chat, live broadcast integration, and wallet system.</p>
+      <p>Downloads : 100K+</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.mastiindia">Play Store</a>
+    </div>
+
+    <div class="card">
+      <h3>ZeboLive – Live Streaming App</h3>
+      <p>live streaming modules like feed, real-time chat, live broadcast integration, and wallet system.</p>
+      <p>Downloads : 10K+</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.bigi.bigiapp">Play Store</a>
+    </div>
+
+
+    <div class="card">
+      <h3>Aukaat – Live Streaming App</h3>
+      <p>Go live, meet new people, and become a star.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.aukaat.app">Play Store</a>
+    </div>
+
+    <div class="card">
+      <h3>WeStar – Live Streaming App</h3>
+      <p>Go live, meet new people, and become a star.</p>
+      <p>Downloads : 10K+</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.expert.eplive">Play Store</a>
+    </div>
+
+     <div class="card">
+      <h3>Hozi Live – Live Streaming App</h3>
+      <p> live audio party rooms, instant messaging, and exciting virtual gifts.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.livetech.liveapp">Play Store</a>
+    </div>
+
+    <div class="card">
+      <h3>Miicall – Meeting App</h3>
+      <p>Zoom-like app with video calls, chat, Stripe payments.</p>
+      <p>Downloads : 10K+</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.miicall">Play Store</a>
+    </div>
+
+    <div class="card">
+      <h3>Biongevity – Health App</h3>
+      <p>Health tracking + Fitbit + ML Kit integration.</p>
+       <p>Downloads : 1K+</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.biongevity.com">Play Store</a>
+    </div>
+
+    <div class="card">
+      <h3>Biosport – Fitness App</h3>
+      <p>Workout plans + subscription system.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.thebiosport.app">Play Store</a>
+    </div>
+
+    <div class="card">
+      <h3>Vautra – Secure Storage</h3>
+      <p>Encrypted storage + subscription model.</p>
+       <p>Downloads : 1K+</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.storage.vautra">Play Store</a>
+    </div>
+
+      <div class="card">
+      <h3>Anryton – Secure Storage</h3>
+      <p>Encrypted storage + subscription model.</p>
+      <a class="btn" href="https://play.google.com/store/apps/details?id=com.anryton">Play Store</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- PRICING -->
+<section id="pricing">
+  <h2 class="title">Pricing</h2>
+
+  <div class="grid">
+
+    <div class="card">
+      <h3>Basic App</h3>
+      <p class="price">$200 - $500</p>
+      <p>UI + API Integration</p>
+    </div>
+
+    <div class="card">
+      <h3>Standard App</h3>
+      <p class="price">$500 - $1500</p>
+      <p>Firebase, Auth, Payments</p>
+    </div>
+
+    <div class="card">
+      <h3>Advanced App</h3>
+      <p class="price">$1500 - $5000+</p>
+      <p>Live Streaming, WebRTC, Chat</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="title">Contact Me</h2>
+
+  <div class="card">
+    <input placeholder="Your Name"/>
+    <input placeholder="Email"/>
+    <textarea placeholder="Project Requirement"></textarea>
+
+    <a class="btn" href="mailto:jaspalsinghbhakha@gmail.com">Let’s Build Your App</a>
+
+    <br><br>
+    <p>Email: jaspalsinghbhakha@gmail.com</p>
+    <p>Phone: +91-9872239826</p>
+    <p>Whatsapp: +91-9872239826</p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Jass | Android Developer
+</footer>
+
+</body>
+</html>
